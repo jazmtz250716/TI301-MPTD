@@ -1,4 +1,4 @@
-package lineasdeespera;
+package Lineas_De_Espera;
 
 import java.util.*;
 
