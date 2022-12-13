@@ -1,13 +1,16 @@
-package Lineas_De_Espera;
+package lineasdeespera;
 
 import java.util.*;
 
+
 public class LineasDeEspera {
+
+public class Objeto {
 
     ArrayList<String> nombre = new ArrayList<>();
     Queue<String> colaClientes = new LinkedList<>();
 
-    public LineasDeEspera() {
+    public Objeto() {
         colaNombres();
     }
 
@@ -46,11 +49,13 @@ public class LineasDeEspera {
         return nombre;
     }
 
+    
     public int generaRandom(int min, int max) {
         Random random = new Random();
         return random.nextInt((max - min) + 1) + min;
     }
 
+    
     public void colaNombres() {
         listaNombres();
         int i = 0;
@@ -60,23 +65,26 @@ public class LineasDeEspera {
         }
     }
 
+    
     public String primerPosicion() {
 
         return colaClientes.peek();
     }
 
+    
     public String ultimaPosicion() {
         Collections.reverse((List<?>) colaClientes);
 
         return colaClientes.peek();
     }
 
+    
     @Override
     public String toString() {
         colaClientes.forEach(cola -> {
             System.out.println(cola);
         });
-
+        
         System.out.println("");
         if (colaClientes.isEmpty()) {
             System.out.println("");
@@ -93,4 +101,6 @@ public class LineasDeEspera {
 
         return "";
     }
+}
+
 }
